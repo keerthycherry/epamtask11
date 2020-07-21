@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script>
+            function validate(){
+                
+                var email=document.forms["login"]["Email"];
+                var pass=document.forms["login"]["Password"];
+               
+              
+                if(email.value==""){
+                    window.alert("Please enter your email");
+                    email.focus();
+                    return false;
+                }
+                if(pass.value=="" || pass.value.length<6){
+                    window.alert("Please enter a valid  password");
+                    pass.focus();
+                    return false;
+                }
+               
+               
+                if(email.value!="" && pass.value!="" ){
+                    alert("Login successful");
+                    return true;
+                }
+
+
+            }
+        </script>
+        <style>
+            .container{
+                background-color: #f1f1f1;
+                background-size: cover;
+                    min-height:900px ;
+            }
+            .para1{
+                color:black;
+            }
+            input{
+               width: 100%;
+               padding: 12px 20px;
+               margin: 8px 0;
+               display: inline-block;
+               border: 1px solid #ccc;
+               border-radius: 4px;
+               box-sizing: border-box;
+          }
+          input[type=submit]{
+              background-color:lightcoral;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="para1">
+        <h1 style="text-align:center">LOGIN PAGE</h1>
+        </div>
+        <form name="login" action="" onSubmit="return validate()" method="post">
+       
+        <label for="email"><b>EMAIL ID:</b></label><br>
+        <input type="email" id="email" name="Email"><br>
+        <br>
+        <label for="pass"><b>PASSWORD:</b></label><br>
+        <input type="password" id="pass" name="Password"><br>
+       
+        
+        <p><input type="submit" value="LOGIN" name="Submit"> </p>
+
+        </form>
+    </div>
+    </body>
+</html>
